@@ -1,0 +1,613 @@
+.body {
+    display: grid;
+    background-color: black;
+}
+
+.calculatorCont {
+    width: 400px;
+    height: 600px;
+    display: grid;
+    margin: auto;
+    background-color: transparent;
+    background-image: url(purpleTexture.jpeg);
+}
+
+.functionalCont {
+    display: grid;
+    grid-template-rows: 100px 50px 400px;
+    width: 350px;
+    height: 550px;
+    background-color: transparent;
+    margin: auto;
+}
+
+.displayCont {
+    display: grid;
+    grid-row: 1/2;
+    align-self: end;
+    justify-self: center;
+    width: 330px;
+    height: 80px;
+    border-width: 2px 2px 2px 2px;
+    border-style: solid;
+    border-color: rgb(75, 75, 75);
+    border-radius: 3px;
+    background-color: black;
+}
+
+.display {
+    display: grid;
+    grid-template-rows: 50px;
+    box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.9), inset 0px 0px 15px 6px rgba(0, 65, 163, 0.5);
+    border: 1px dashed rgb(0, 0, 0);
+    align-self: center;
+    justify-self: center;
+    width: 300px;
+    height: 40px;
+    background-color: rgb(0, 0, 0);
+}
+
+.displayText {
+    font-family: 'Orbitron', monospace;
+    display: grid;
+    align-self: center;
+    justify-self: end;
+    margin-top: 10px;
+    margin-right: 5px;
+    font-size: 30px;
+    color: rgba(164, 229, 255, 0.808);
+    text-shadow: 1px 4px 6px rgba(0, 190, 248, 0.5), 0 0 0 rgba(0, 195, 255, 0.5), 1px 4px 6px rgba(109, 245, 255, 0.5);
+}
+
+.buttonsCont {
+    display: grid;
+    grid-row: 3/4;
+    height: 370px;
+    width: 336px;
+    justify-content: start;
+    align-content: start;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+        "screen screen screen rand"
+        "screen screen screen rand"
+        "clear del percent addd"
+        "seven eight nine subtractt"
+        "four five six multiplyy"
+        "one two three divide"
+        "decimall zeroo equals equals";
+    background-color: transparent;
+    background-image: url(btnBackground.jpeg);
+    border-style: solid;
+    border-width: 10px 7px 20px 7px;
+    border-color: transparent;
+    border-image-source: url(chromeTexture.jpeg);
+    border-image-slice: 10;
+    outline: solid 2px rgb(92, 92, 92);
+}
+
+.screen2Cont {
+    display: grid;
+    grid-area: screen;
+    height: 85px;
+    width: 252px;
+    background-color: transparent;
+    background-image: url(brushedMetal.jpeg);
+    border-radius: 4px;
+    border-color: rgb(75, 75, 75);
+    border-style: solid;
+    border-width: 2px 2px 2px 2px;
+}
+.screen2 {
+    display: grid;
+    grid-template-areas: 
+        "text1"
+        "text2"
+        "text3";
+    width: 200px;
+    height: 50px;
+    border: 2px dashed rgb(197, 255, 255);
+    border-radius: 1px;
+    background: linear-gradient(rgb(152, 255, 255), rgb(197, 255, 255));
+    box-shadow: 0px 0px 15px 5px rgb(39, 227, 252);
+    margin-top: 10px;
+    margin-left: 12px;
+    
+}
+
+.screenText1 {
+    color: rgba(42, 141, 255, 0.7);
+    justify-self: start;
+    align-self: end;
+    grid-area: text1;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+    font-family: 'Press Start 2P', monospace;
+}
+
+.screenText2 {
+    font-family: 'Press Start 2P', monospace;
+    color: rgba(42, 141, 255, 0.7);
+    justify-self: start;
+    align-self: end;
+    grid-area: text2;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+#clear {
+    grid-area: clear;
+    background-color:rgb(49, 49, 49);
+    color: rgb(255, 253, 253);
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 4px 4px 10px rgb(255, 255, 255);
+    box-shadow: 0px 5px 0px #383838, inset 0px -10px 15px rgba(255, 255, 255, 0.4);
+    border: 2px outset rgb(95, 95, 95);
+    border-radius: 2px;
+    border: 1px solid rgb(70, 70, 70);
+    width: 60px;
+    height: 30px;
+    justify-self: center;
+    align-self: start;
+    outline: none;
+}
+#clear:active {
+    background-color: rgb(85, 85, 85);
+    box-shadow: 0 5px #383838;
+    transform: translateY(4px);
+  }
+#clear:focus {
+    text-shadow: 0 3px 4px rgb(148, 255, 250), 3px 0 4px rgb(171, 249, 255), 0 -3px 4px rgb(164, 255, 247), -3px 0px 4px rgb(171, 255, 251);
+}
+
+#delete {
+    grid-area: del;
+    background-color:rgb(49, 49, 49);
+    color: rgb(219, 216, 216);
+    font-family: 'Orbitron', sans-serif;
+    box-shadow: 0px 5px 0px #383838, inset 0px -10px 15px rgba(255, 255, 255, 0.4);
+    border: 2px outset rgb(95, 95, 95);
+    border-radius: 2px;
+    border: 1px solid rgb(70, 70, 70);
+    width: 60px;
+    height: 30px;
+    justify-self: center;
+    align-self: start;
+    outline: none;
+}
+#delete:active {
+    background-color: rgb(85, 85, 85);
+    box-shadow: 0 5px #383838;
+    transform: translateY(4px);
+  }
+#delete:focus {
+    text-shadow: 0 3px 4px rgb(148, 255, 250), 3px 0 4px rgb(171, 249, 255), 0 -3px 4px rgb(164, 255, 247), -3px 0px 4px rgb(171, 255, 251);
+}
+
+#percent {
+    grid-area: percent;
+    background-color:rgb(49, 49, 49);
+    color: rgb(219, 216, 216);
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 4px 4px 10px rgb(255, 255, 255);
+    box-shadow: 0px 5px 0px #383838, inset 0px -10px 15px rgba(255, 255, 255, 0.4);
+    border: 2px outset rgb(95, 95, 95);
+    border-radius: 2px;
+    border: 1px solid rgb(70, 70, 70);
+    width: 60px;
+    height: 30px;
+    justify-self: center;
+    align-self: start;
+    outline: none;
+}
+#percent:active {
+    background-color: rgb(85, 85, 85);
+    box-shadow: 0 5px #383838;
+    transform: translateY(4px);
+  }
+#percent:focus {
+    text-shadow: 0 3px 4px rgb(148, 255, 250), 3px 0 4px rgb(171, 249, 255), 0 -3px 4px rgb(164, 255, 247), -3px 0px 4px rgb(171, 255, 251);
+}
+
+#add {
+    grid-area: addd;
+    background-color:rgb(49, 49, 49);
+    color: rgb(219, 216, 216);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
+    text-shadow: 4px 4px 10px rgb(255, 255, 255);
+    box-shadow: 0px 5px 0px #383838, inset 0px -10px 15px rgba(255, 255, 255, 0.4);
+    border: 2px outset rgb(95, 95, 95);
+    border-radius: 2px;
+    border: 1px solid rgb(70, 70, 70);
+    width: 60px;
+    height: 30px;
+    justify-self: center;
+    align-self: start;
+    outline: none;
+}
+#add:active {
+    background-color: rgb(85, 85, 85);
+    box-shadow: 0 5px #383838;
+    transform: translateY(4px);
+  }
+#add:focus {
+    text-shadow: 0 3px 4px rgb(148, 255, 250), 3px 0 4px rgb(171, 249, 255), 0 -3px 4px rgb(164, 255, 247), -3px 0px 4px rgb(171, 255, 251);
+}
+
+#seven {
+    grid-area: seven;
+    background-color:rgb(49, 49, 49);
+    color: rgb(219, 216, 216);
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 4px 4px 10px rgb(255, 255, 255);
+    box-shadow: 0px 5px 0px #383838, inset 0px -10px 15px rgba(255, 255, 255, 0.4);
+    border: 2px outset rgb(95, 95, 95);
+    border-radius: 2px;
+    border: 1px solid rgb(70, 70, 70);
+    width: 60px;
+    height: 30px;
+    justify-self: center;
+    align-self: start;
+    outline: none;
+}
+#seven:active {
+    background-color: rgb(85, 85, 85);
+    box-shadow: 0 5px #383838;
+    transform: translateY(4px);
+  }
+#seven:focus {
+    text-shadow: 0 3px 4px rgb(148, 255, 250), 3px 0 4px rgb(171, 249, 255), 0 -3px 4px rgb(164, 255, 247), -3px 0px 4px rgb(171, 255, 251);
+}
+
+#eight {
+    grid-area: eight;
+    background-color:rgb(49, 49, 49);
+    color: rgb(219, 216, 216);
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 4px 4px 10px rgb(255, 255, 255);
+    box-shadow: 0px 5px 0px #383838, inset 0px -10px 15px rgba(255, 255, 255, 0.4);
+    border: 2px outset rgb(95, 95, 95);
+    border-radius: 2px;
+    border: 1px solid rgb(70, 70, 70);
+    width: 60px;
+    height: 30px;
+    justify-self: center;
+    align-self: start;
+    outline: none;
+}
+#eight:active {
+    background-color: rgb(85, 85, 85);
+    box-shadow: 0 5px #383838;
+    transform: translateY(4px);
+  }
+#eight:focus {
+    text-shadow: 0 3px 4px rgb(148, 255, 250), 3px 0 4px rgb(171, 249, 255), 0 -3px 4px rgb(164, 255, 247), -3px 0px 4px rgb(171, 255, 251);
+}
+
+#nine {
+    grid-area: nine;
+    background-color:rgb(49, 49, 49);
+    color: rgb(219, 216, 216);
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 4px 4px 10px rgb(255, 255, 255);
+    box-shadow: 0px 5px 0px #383838, inset 0px -10px 15px rgba(255, 255, 255, 0.4);
+    border: 2px outset rgb(95, 95, 95);
+    border-radius: 2px;
+    border: 1px solid rgb(70, 70, 70);
+    width: 60px;
+    height: 30px;
+    justify-self: center;
+    align-self: start;
+    outline: none;
+}
+#nine:active {
+    background-color: rgb(85, 85, 85);
+    box-shadow: 0 5px #383838;
+    transform: translateY(4px);
+  }
+#nine:focus {
+    text-shadow: 0 3px 4px rgb(148, 255, 250), 3px 0 4px rgb(171, 249, 255), 0 -3px 4px rgb(164, 255, 247), -3px 0px 4px rgb(171, 255, 251);
+}
+
+#subtract {
+    grid-area: subtractt;
+    background-color:rgb(49, 49, 49);
+    color: rgb(219, 216, 216);
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 4px 4px 10px rgb(255, 255, 255);
+    box-shadow: 0px 5px 0px #383838, inset 0px -10px 15px rgba(255, 255, 255, 0.4);
+    border: 2px outset rgb(95, 95, 95);
+    border-radius: 2px;
+    border: 1px solid rgb(70, 70, 70);
+    width: 60px;
+    height: 30px;
+    justify-self: center;
+    align-self: start;
+    outline: none;
+}
+#subtract:active {
+    background-color: rgb(85, 85, 85);
+    box-shadow: 0 5px #383838;
+    transform: translateY(4px);
+  }
+#subtract:focus {
+    text-shadow: 0 3px 4px rgb(148, 255, 250), 3px 0 4px rgb(171, 249, 255), 0 -3px 4px rgb(164, 255, 247), -3px 0px 4px rgb(171, 255, 251);
+}
+
+#four {
+    grid-area: four;
+    background-color:rgb(49, 49, 49);
+    color: rgb(219, 216, 216);
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 4px 4px 10px rgb(255, 255, 255);
+    box-shadow: 0px 5px 0px #383838, inset 0px -10px 15px rgba(255, 255, 255, 0.4);
+    border: 2px outset rgb(95, 95, 95);
+    border-radius: 2px;
+    border: 1px solid rgb(70, 70, 70);
+    width: 60px;
+    height: 30px;
+    justify-self: center;
+    align-self: start;
+    outline: none;
+}
+#four:active {
+    background-color: rgb(85, 85, 85);
+    box-shadow: 0 5px #383838;
+    transform: translateY(4px);
+  }
+#four:focus {
+    text-shadow: 0 3px 4px rgb(148, 255, 250), 3px 0 4px rgb(171, 249, 255), 0 -3px 4px rgb(164, 255, 247), -3px 0px 4px rgb(171, 255, 251);
+}
+
+#five {
+    grid-area: five;
+    background-color:rgb(49, 49, 49);
+    color: rgb(219, 216, 216);
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 4px 4px 10px rgb(255, 255, 255);
+    box-shadow: 0px 5px 0px #383838, inset 0px -10px 15px rgba(255, 255, 255, 0.4);
+    border: 2px outset rgb(95, 95, 95);
+    border-radius: 2px;
+    border: 1px solid rgb(70, 70, 70);
+    width: 60px;
+    height: 30px;
+    justify-self: center;
+    align-self: start;
+    outline: none;
+}
+#five:active {
+    background-color: rgb(85, 85, 85);
+    box-shadow: 0 5px #383838;
+    transform: translateY(4px);
+  }
+#five:focus {
+    text-shadow: 0 3px 4px rgb(148, 255, 250), 3px 0 4px rgb(171, 249, 255), 0 -3px 4px rgb(164, 255, 247), -3px 0px 4px rgb(171, 255, 251);
+}
+
+#six {
+    grid-area: six;
+    background-color:rgb(49, 49, 49);
+    color: rgb(219, 216, 216);
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 4px 4px 10px rgb(255, 255, 255);
+    box-shadow: 0px 5px 0px #383838, inset 0px -10px 15px rgba(255, 255, 255, 0.4);
+    border: 2px outset rgb(95, 95, 95);
+    border-radius: 2px;
+    border: 1px solid rgb(70, 70, 70);
+    width: 60px;
+    height: 30px;
+    justify-self: center;
+    align-self: start;
+    outline: none;
+}
+#six:active {
+    background-color: rgb(85, 85, 85);
+    box-shadow: 0 5px #383838;
+    transform: translateY(4px);
+  }
+#six:focus {
+    text-shadow: 0 3px 4px rgb(148, 255, 250), 3px 0 4px rgb(171, 249, 255), 0 -3px 4px rgb(164, 255, 247), -3px 0px 4px rgb(171, 255, 251);
+}
+
+#multiply {
+    grid-area: multiplyy;
+    background-color:rgb(49, 49, 49);
+    color: rgb(219, 216, 216);
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 4px 4px 10px rgb(255, 255, 255);
+    box-shadow: 0px 5px 0px #383838, inset 0px -10px 15px rgba(255, 255, 255, 0.4);
+    border: 2px outset rgb(95, 95, 95);
+    border-radius: 2px;
+    border: 1px solid rgb(70, 70, 70);
+    width: 60px;
+    height: 30px;
+    justify-self: center;
+    align-self: start;
+    outline: none;
+}
+#multiply:active {
+    background-color: rgb(85, 85, 85);
+    box-shadow: 0 5px #383838;
+    transform: translateY(4px);
+  }
+#multiply:focus {
+    text-shadow: 0 3px 4px rgb(148, 255, 250), 3px 0 4px rgb(171, 249, 255), 0 -3px 4px rgb(164, 255, 247), -3px 0px 4px rgb(171, 255, 251);
+}
+
+#one {
+    grid-area: one;
+    background-color:rgb(49, 49, 49);
+    color: rgb(219, 216, 216);
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 4px 4px 10px rgb(255, 255, 255);
+    box-shadow: 0px 5px 0px #383838, inset 0px -10px 15px rgba(255, 255, 255, 0.4);
+    border: 2px outset rgb(95, 95, 95);
+    border-radius: 2px;
+    border: 1px solid rgb(70, 70, 70);
+    width: 60px;
+    height: 30px;
+    justify-self: center;
+    align-self: start;
+    outline: none;
+}
+#one:active {
+    background-color: rgb(85, 85, 85);
+    box-shadow: 0 5px #383838;
+    transform: translateY(4px);
+  }
+#one:focus {
+    text-shadow: 0 3px 4px rgb(148, 255, 250), 3px 0 4px rgb(171, 249, 255), 0 -3px 4px rgb(164, 255, 247), -3px 0px 4px rgb(171, 255, 251);
+}
+
+#two {
+    grid-area: two;
+    background-color:rgb(49, 49, 49);
+    color: rgb(219, 216, 216);
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 4px 4px 10px rgb(255, 255, 255);
+    box-shadow: 0px 5px 0px #383838, inset 0px -10px 15px rgba(255, 255, 255, 0.4);
+    border: 2px outset rgb(95, 95, 95);
+    border-radius: 2px;
+    border: 1px solid rgb(70, 70, 70);
+    width: 60px;
+    height: 30px;
+    justify-self: center;
+    align-self: start;
+    outline: none;
+}
+#two:active {
+    background-color: rgb(85, 85, 85);
+    box-shadow: 0 5px #383838;
+    transform: translateY(4px);
+  }
+#two:focus {
+    text-shadow: 0 3px 4px rgb(148, 255, 250), 3px 0 4px rgb(171, 249, 255), 0 -3px 4px rgb(164, 255, 247), -3px 0px 4px rgb(171, 255, 251);
+}
+
+#three {
+    grid-area: three;
+    background-color:rgb(49, 49, 49);
+    color: rgb(219, 216, 216);
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 4px 4px 10px rgb(255, 255, 255);
+    box-shadow: 0px 5px 0px #383838, inset 0px -10px 15px rgba(255, 255, 255, 0.4);
+    border: 2px outset rgb(95, 95, 95);
+    border-radius: 2px;
+    border: 1px solid rgb(70, 70, 70);
+    width: 60px;
+    height: 30px;
+    justify-self: center;
+    align-self: start;
+    outline: none;
+}
+#three:active {
+    background-color: rgb(85, 85, 85);
+    box-shadow: 0 5px #383838;
+    transform: translateY(4px);
+  }
+#three:focus {
+    text-shadow: 0 3px 4px rgb(148, 255, 250), 3px 0 4px rgb(171, 249, 255), 0 -3px 4px rgb(164, 255, 247), -3px 0px 4px rgb(171, 255, 251);
+}
+
+#divide {
+    grid-area: divide;
+    background-color:rgb(49, 49, 49);
+    color: rgb(219, 216, 216);
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 4px 4px 10px rgb(255, 255, 255);
+    box-shadow: 0px 5px 0px #383838, inset 0px -10px 15px rgba(255, 255, 255, 0.4);
+    border: 2px outset rgb(95, 95, 95);
+    border-radius: 2px;
+    border: 1px solid rgb(70, 70, 70);
+    width: 60px;
+    height: 30px;
+    justify-self: center;
+    align-self: start;
+    outline: none;
+}
+#divide:active {
+    background-color: rgb(85, 85, 85);
+    box-shadow: 0 5px #383838;
+    transform: translateY(4px);
+  }
+#divide:focus {
+    text-shadow: 0 3px 4px rgb(148, 255, 250), 3px 0 4px rgb(171, 249, 255), 0 -3px 4px rgb(164, 255, 247), -3px 0px 4px rgb(171, 255, 251);
+}
+
+#decimal {
+    grid-area: decimall;
+    background-color:rgb(49, 49, 49);
+    color: rgb(219, 216, 216);
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 4px 4px 10px rgb(255, 255, 255);
+    box-shadow: 0px 5px 0px #383838, inset 0px -10px 15px rgba(255, 255, 255, 0.4);
+    border: 2px outset rgb(95, 95, 95);
+    border-radius: 2px;
+    border: 1px solid rgb(70, 70, 70);
+    width: 60px;
+    height: 30px;
+    justify-self: center;
+    align-self: start;
+    outline: none;
+}
+#decimal:active {
+    background-color: rgb(85, 85, 85);
+    box-shadow: 0 5px #383838;
+    transform: translateY(4px);
+  }
+#decimal:focus {
+    text-shadow: 0 3px 4px rgb(148, 255, 250), 3px 0 4px rgb(171, 249, 255), 0 -3px 4px rgb(164, 255, 247), -3px 0px 4px rgb(171, 255, 251);
+}
+
+#zero {
+    grid-area: zeroo;
+    background-color:rgb(49, 49, 49);
+    color: rgb(219, 216, 216);
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 4px 4px 10px rgb(255, 255, 255);
+    box-shadow: 0px 5px 0px #383838, inset 0px -10px 15px rgba(255, 255, 255, 0.4);
+    border: 2px outset rgb(95, 95, 95);
+    border-radius: 2px;
+    border: 1px solid rgb(70, 70, 70);
+    width: 60px;
+    height: 30px;
+    justify-self: center;
+    align-self: start;
+    outline: none;
+}
+#zero:active {
+    background-color: rgb(85, 85, 85);
+    box-shadow: 0 5px #383838;
+    transform: translateY(4px);
+  }
+#zero:focus {
+    text-shadow: 0 3px 4px rgb(148, 255, 250), 3px 0 4px rgb(171, 249, 255), 0 -3px 4px rgb(164, 255, 247), -3px 0px 4px rgb(171, 255, 251);
+}
+
+#equals {
+    grid-area: equals;
+    background-color:rgb(49, 49, 49);
+    color: rgb(219, 216, 216);
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 4px 4px 10px rgb(255, 255, 255);
+    box-shadow: 0px 5px 0px #383838, inset 0px -10px 15px rgba(255, 255, 255, 0.4);
+    border: 2px outset rgb(95, 95, 95);
+    border-radius: 2px;
+    border: 1px solid rgb(70, 70, 70);
+    width: 140px;
+    height: 30px;
+    justify-self: center;
+    align-self: start;
+    outline: none;
+}
+#equals:active {
+    background-color: rgb(85, 85, 85);
+    box-shadow: 0 5px #383838;
+    transform: translateY(4px);
+  }
+#equals:focus {
+    text-shadow: 0 3px 4px rgb(148, 255, 250), 3px 0 4px rgb(171, 249, 255), 0 -3px 4px rgb(164, 255, 247), -3px 0px 4px rgb(171, 255, 251);
+}

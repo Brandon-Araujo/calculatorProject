@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Wallpoet&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class='calculatorCont'>
+        <div class='functionalCont'>
+            <div class='buttonsCont'>
+                <div class="screen2Cont">
+                    <div class="screen2">
+                        <p class="screenText1">JAVASCRIPT</p>
+                        <p class="screenText2">CALCULATOR</p>
+                    </div>
+                </div>
+                <button id="clear" value="clear" data-key="67">C</button>
+                <button id="delete" value="del" data-key="8">DEL</button>
+                <button class="percent" id="percent" value="%" data-key="80">%</button>
+                <button class="operator" id="add" value="+" data-key="107">+</button>
+                <button class="numBtn" id="seven" value="7" data-key="55">7</button>
+                <button class="numBtn" id="eight" value="8" data-key="56">8</button>
+                <button class="numBtn" id="nine" value="9" data-key="57">9</button>
+                <button class="operator" id="subtract" value="-" data-key="109">-</button>
+                <button class=numBtn id="four" value="4" data-key="52">4</button>
+                <button class=numBtn id="five" value="5" data-key="53">5</button>
+                <button class=numBtn id="six" value="6" data-key="54">6</button>
+                <button class="operator" id="multiply" value="*" data-key="106">*</button>
+                <button class=numBtn id="one" value="1" data-key="49">1</button>
+                <button class=numBtn id="two" value ="2" data-key="50">2</button>
+                <button class=numBtn id="three" value="3" data-key="51">3</button>
+                <button class="operator" id="divide" value="/" data-key="111">/</button>
+                <button id="decimal" value="." data-key="110">.</button>
+                <button class=numBtn id="zero" value="0" data-key="48">0</button>
+                <button class="equalsBtn" id="equals" value="=" data-key="187">=</button>
+            </div>
+            <div class='displayCont'>
+                <div class="display">
+                    <h1 class="displayText"></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+            
+            
+    <script>
+        //Basic operation functions
+        function add(a, b) {
+            console.log(a);
+            console.log(b);
+            let result = a + b;
+            let resultRounded = Math.round(result * 1000) / 1000;
+            display.textContent = resultRounded;
+            value1 = resultRounded;
+            solution = resultRounded;
+        }
+
+        function subtract(a, b) {
+            let result = a - b;
+            let resultRounded = Math.round(result * 1000) / 1000;
+            display.textContent = resultRounded;
+            value1 = resultRounded;
+            solution = resultRounded;
+        }
+
+        function multiply(a, b) {
+            let result = a * b;
+            let resultRounded = Math.round(result * 1000) / 1000;
+            display.textContent = resultRounded;
+            value1 = resultRounded;
+            solution = resultRounded;
+        }
+      
+        function divide(a, b) {
+            if (a == 0 && b == 0) {
+                display.textContent = '....yawn'
+            } else {
+            let result = a / b;
+            let resultRounded = Math.round(result * 1000) / 1000;
+            display.textContent = resultRounded;
+            value1 = resultRounded;
+            solution = resultRounded;
+            }   
+        }
+
+        function percent(a) {
+            let result = a / 100;
+            let resultRounded = Math.round(result * 1000) / 1000;
+            display.textContent = resultRounded;
+            value1 = resultRounded;
+            solution = resultRounded;
+        }
+
+        //Routes operator input into appropriate function
+        function operate(operator, num1, num2) {
+            if (operator == '+') {
+                console.log('scoutReconOperate');
+                return add(num1, num2);
+            }
+            if (operator == '-') {
+                return subtract(num1, num2);
+            }
+            if (operator == '*') {
+                return multiply(num1, num2);
+            }
+            if (operator == '/') {
+                return divide(num1, num2);
+            }
+            if (operator == '%') {
+                return percent(num1);
+            }
+            else {
+                return 'OOPS';
+            }
+        }
+            
+        //Setting variables and query selectors
+        let value1 = '';
+        let value2 = '';
+        let solution = '';
+        let operatorValue = '';
+
+        const display = document.querySelector('.displayText');
+        const clear = document.querySelector('#clear');
+        const decimal = document.querySelector('#decimal');
+        const del = document.querySelector('#delete');
+        const percentBtn = document.querySelector('#percent');
+
+        //percent button
+        percentBtn.addEventListener('click', event => {
+            value1 = display.textContent;
+            operate('%', value1);
+        })
+
+        //Keyboard functionality
+        window.addEventListener('keydown', function(e){
+        const key = document.querySelector(`button[data-key='${e.keyCode}']`);
+        key.click();
+        });
+
+        //Delete button
+        del.addEventListener('click', event => {
+            display.textContent = display.textContent.slice(0, display.textContent.length - 1);
+        })
+
+        //Decimal button
+        decimal.addEventListener('click', event => {
+            if (display.textContent.includes('.')) {
+                decimal.disabled = true;
+            }
+            if (!display.textContent.includes('.')) {
+                decimal.disabled = false;
+            }
+            display.textContent += '.';
+        })
+
+        //Clear button
+        clear.addEventListener('click', event => {
+            value1 = '';
+            value2 = '';
+            solution = '';
+            operatorValue = '';
+            display.textContent = '';
+        })
+
+        //Number buttons
+        const digits = document.querySelectorAll('.numBtn').forEach(item => {
+            item.addEventListener('click', event => {
+                if (display.textContent.length >= 11) {
+                    let parsed = parseInt(display.textContent);
+                    display.textContent = parsed.toExponential(2);
+                }
+                if (display.textContent == solution) {
+                    display.textContent = '';
+                }
+                display.textContent += item.textContent;
+            })
+        })
+
+        //Operator buttons
+        const operatorFunc = document.querySelectorAll('.operator').forEach(item => {
+            item.addEventListener('click', event => {
+                if (value1 == '') {
+                    operatorValue = item.textContent;
+                    value1 = display.textContent;
+                    display.textContent = '';
+                    operatorValue = item.textContent;
+                }
+                else if (value1 !== '') {
+                    value2 = display.textContent;
+                    let num1 = parseInt(value1);
+                    let num2 = parseInt(value2);
+                    operate(operatorValue, num1, num2);
+                    display.textContent = solution;
+                    operatorValue = item.textContent;
+                }
+            })
+        })
+
+        //Equals button
+        const equals = document.querySelector('.equalsBtn');
+        equals.addEventListener('click', event => {
+            value2 = display.textContent;
+            let num1 = parseFloat(value1);
+            let num2 = parseFloat(value2);
+            if (value2 == '' && operatorValue !== '') {
+                operate(operatorValue, num1, num1);
+            }
+            else {
+            operate(operatorValue, num1, num2);
+            value2 = '';
+            operatorValue = '';
+            }
+        })
+        
+
+    </script>
+</body>
+</head>
+</html>
+
